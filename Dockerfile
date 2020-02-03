@@ -4,11 +4,11 @@ FROM node:12.13.1
 WORKDIR /srv/marcusfran.co
 
 # Install dependencies
-COPY package*.json .
+COPY package*.json ./
 RUN npm install
 
 # Bundle app source
 COPY . .
 
 EXPOSE 80
-CMD [ "DEBUG=marcusfran.co:*", "node", "bin/www" ]
+CMD ["npm", "start"]

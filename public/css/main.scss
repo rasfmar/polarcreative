@@ -1,0 +1,109 @@
+@charset 'UTF-8';
+@import url('https://fonts.googleapis.com/css?family=Righteous|Rubik&display=swap');
+
+$purple: hsl(275, 100%, 52%);
+$pink: hsl(343, 100%, 61%);
+$offwhite: hsl(275, 100%, 95%);
+$lightpurple: hsl(275, 25%, 55%);
+$offblack: hsl(275, 100%, 5%);
+
+@mixin prefix($prop, $val, $prefixes: ()) {
+    #{$prop}: $val;
+    @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $prop}: $val;
+    }
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    background: $offwhite;
+}
+
+.container-fluid {
+    padding: 0;
+    .col {
+        padding: 0;
+        padding-top: 10rem;
+    }
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+.sep {
+    color: transparent;
+    white-space: pre;
+    font-family: 'Righteous', cursive;
+    text-transform: uppercase;
+    &.activated {
+        color: #fff;
+    }
+}
+
+.sep span {
+    display: inline-block;
+    > * {
+        display: block;
+        font-size: 2.5rem;
+    }
+}
+
+img {
+    width: 100px;
+}
+
+p {
+    color: #fff;
+}
+
+.bg {
+    position: relative;
+    background: #000;
+    height: 600px;
+    width: 100%;
+    > *:not(.container-fluid) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    .overlay {
+        background: linear-gradient(to bottom, $pink, $purple);
+        opacity: 0.25;
+    }
+    .svg svg {
+        position: absolute;
+        bottom: -1px;
+    }
+}
+
+.footer {
+    background: $offwhite;
+    .row {
+        color: $lightpurple;
+        &:nth-child(1) {
+            padding-bottom: 0.5rem;
+        }
+    }
+    a {
+        margin: 0 0.75rem;
+        transition: all .3s cubic-bezier(0,1.24,1,1);
+        color: $lightpurple;
+        svg {
+            width: 1.75rem !important;
+            height: 1.75rem !important;
+            transition: all .3s cubic-bezier(0,1.24,1,1);
+        }
+        &:hover, &:active, &:focus {
+            svg {
+                @include prefix(transform, scale(1.1), webkit moz ms o);
+                color: $purple;
+            }              
+        }
+    }
+}

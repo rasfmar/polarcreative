@@ -67,9 +67,11 @@ p {
       height: 1.75rem !important;
       transition: all 0.3s cubic-bezier(0, 1.24, 1, 1); }
     .footer a:hover svg, .footer a:active svg, .footer a:focus svg {
-      transform: scale(1.1);
-      -webkit-transform: scale(1.1);
-      -moz-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      -o-transform: scale(1.1);
+      transform: translateY(-0.25rem);
+      -webkit-transform: translateY(-0.25rem);
+      -moz-transform: translateY(-0.25rem);
+      -ms-transform: translateY(-0.25rem);
+      -o-transform: translateY(-0.25rem);
       color: #990aff; }
+
+/*# sourceMappingURL=main.css.map */

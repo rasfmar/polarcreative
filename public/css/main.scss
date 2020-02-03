@@ -101,7 +101,7 @@ p {
         }
         &:hover, &:active, &:focus {
             svg {
-                @include prefix(transform, scale(1.1), webkit moz ms o);
+                @include prefix(transform, translateY(-0.25rem), webkit moz ms o);
                 color: $purple;
             }              
         }
